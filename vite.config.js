@@ -7,6 +7,11 @@ const nodeGlobalsPolyfill = pkg.default
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      external: ['@polkadot/x-window']
+    }
+  },
   plugins: [
     react(),
     nodeGlobalsPolyfill(),
@@ -19,5 +24,6 @@ export default defineConfig({
     'global': 'window',
     'process.env': '({})', 
     // Define aquí otros globals si es necesario, pero ten cuidado de no sobredefinir
-  }
+  },
+  base: 'https://EpsyUwU.github.io/leaf_chio',
 })
